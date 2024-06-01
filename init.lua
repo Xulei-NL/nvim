@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
-	"fatih/vim-go",
+	-- "fatih/vim-go",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
@@ -69,6 +69,33 @@ require("lazy").setup({
 			-- or leave it empty to use the default settings
 			-- refer to the configuration section below
 		},
+	},
+	{
+		"preservim/nerdcommenter",
+	},
+	{
+		"mbbill/undotree",
+	},
+	{
+		"ray-x/go.nvim",
+		dependencies = { -- optional packages
+			"ray-x/guihua.lua",
+			"neovim/nvim-lspconfig",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("go").setup()
+		end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	{
+		"ckipp01/stylua-nvim",
 	},
 })
 
@@ -143,17 +170,14 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require("lspconfig")["pyright"].setup({})
 require("lspconfig")["gopls"].setup({})
+require("lspconfig")["clangd"].setup({})
+require("lspconfig")["bashls"].setup({})
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-vim.g.go_def_mode = "gopls"
-vim.g.go_info_mode = "gopls"
-vim.cmd([[colorscheme solarized]])
-vim.o.background = "light" -- or 'light'
-
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -162,4 +186,22 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+local nvimtree = require("nvim-tree").setup()
+
+vim.keymap.set("n", "<leader>ud", vim.cmd.UndotreeToggle)
+vim.g.undotree_SetFocusWhenToggle = 1
+
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		require("go.format").goimports()
+	end,
+	group = format_sync_grp,
+})
+
+require("lualine").setup()
+vim.o.number = true
+
+vim.cmd([[colorscheme solarized]])
+vim.o.background = "light"
