@@ -193,6 +193,7 @@ require("lspconfig")["pyright"].setup({})
 require("lspconfig")["gopls"].setup({})
 require("lspconfig")["clangd"].setup({})
 require("lspconfig")["bashls"].setup({})
+require("lspconfig")["terraformls"].setup({})
 
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
