@@ -18,11 +18,6 @@ require("lazy").setup({
 	"hrsh7th/cmp-path",
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/nvim-cmp",
-	{
-		"mrcjkb/haskell-tools.nvim",
-		version = "^3",
-		ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
-	},
 	"BurntSushi/ripgrep",
 	"sharkdp/fd",
 	"nvim-treesitter/nvim-treesitter",
@@ -96,15 +91,6 @@ require("lazy").setup({
 	},
 	{
 		"ckipp01/stylua-nvim",
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
 	},
 	{
 		"NeogitOrg/neogit",
