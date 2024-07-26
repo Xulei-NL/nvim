@@ -261,7 +261,6 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
+vim.cmd.colorscheme([[solarized]])
 vim.o.number = true
-
-vim.cmd([[colorscheme solarized]])
 vim.o.background = "light"
