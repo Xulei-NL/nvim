@@ -11,7 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
-	-- "fatih/vim-go",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
