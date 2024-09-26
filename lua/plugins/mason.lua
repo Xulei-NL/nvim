@@ -13,6 +13,7 @@ return {
 				"pyright",
 				"terraformls",
 				"bashls",
+				"jsonls",
 				-- add more arguments for adding more language servers
 			},
 		},

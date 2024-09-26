@@ -81,7 +81,7 @@ return {
           end,
           desc = "Undo tree",
         },
-        ["<Leader>tl"] = false,
+        ["<Leader>tn"] = { "<cmd>Neogit<cr>", desc = "Toggle Neogit" },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
