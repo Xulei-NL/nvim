@@ -35,6 +35,7 @@ return {
 				" ▐░▌     ▐░▌▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌",
 				"  ▀       ▀  ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ ",
 			}
+			opts.section.buttons.val = {}
 			return opts
 		end,
 	},
@@ -155,5 +156,9 @@ return {
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
+	},
+	{
+		"AstroNvim/astrotheme",
+		enabled = false,
 	},
 }
