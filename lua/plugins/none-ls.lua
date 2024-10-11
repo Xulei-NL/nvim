@@ -15,15 +15,15 @@ return {
 		-- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
 		opts.sources = require("astrocore").list_insert_unique(opts.sources, {
 			-- Set a formatter
-			null_ls.builtins.formatting.black,
-			null_ls.builtins.formatting.gofmt,
+			-- null_ls.builtins.formatting.black,
+			-- null_ls.builtins.formatting.gofmt,
 			-- null_ls.builtins.formatting.goimports,
 			-- null_ls.builtins.formatting.goimports_reviser,
-			null_ls.builtins.formatting.stylua,
-			null_ls.builtins.formatting.terraform_fmt,
-			null_ls.builtins.formatting.prettier.with({
-				filetypes = { "json", "yaml" },
-			}),
+			-- null_ls.builtins.formatting.stylua,
+			-- null_ls.builtins.formatting.terraform_fmt,
+			-- null_ls.builtins.formatting.prettier.with({
+			-- 	filetypes = { "json", "yaml" },
+			-- }),
 		})
 	end,
 }

@@ -31,6 +31,7 @@ return {
 			"gosum",
 			"gotmpl",
 			"gowork",
+			"helm",
 			-- add more arguments for adding more treesitter parsers
 		},
 	},

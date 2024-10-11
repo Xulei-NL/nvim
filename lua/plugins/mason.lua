@@ -14,6 +14,8 @@ return {
 				"terraformls",
 				"bashls",
 				"jsonls",
+				-- "yamlls",
+				"helm_ls",
 				-- add more arguments for adding more language servers
 			},
 		},
@@ -26,9 +28,9 @@ return {
 			ensure_installed = {
 				-- "goimports",
 				-- "goimports-reviser",
-				"shfmt",
-				"stylua",
-				"terraform_fmt",
+				-- "shfmt",
+				-- "stylua",
+				-- "terraform_fmt",
 				-- add more arguments for adding more null-ls sources
 			},
 		},

@@ -11,11 +11,11 @@ return {
 		-- Configure core features of AstroNvim
 		features = {
 			large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitter
-			autopairs = true, -- enable autopairs at start
-			cmp = true, -- enable completion at start
-			diagnostics_mode = 3, -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
-			highlighturl = true, -- highlight URLs at start
-			notifications = true, -- enable notifications at start
+			autopairs = true,                              -- enable autopairs at start
+			cmp = true,                                    -- enable completion at start
+			diagnostics_mode = 3,                          -- diagnostic mode on start (0 = off, 1 = no signs/virtual text, 2 = no virtual text, 3 = on)
+			highlighturl = true,                           -- highlight URLs at start
+			notifications = true,                          -- enable notifications at start
 		},
 		-- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
 		diagnostics = {
@@ -31,14 +31,14 @@ return {
 		},
 		-- vim options can be configured here
 		options = {
-			opt = { -- vim.opt.<key>
+			opt = {               -- vim.opt.<key>
 				relativenumber = false, -- sets vim.opt.relativenumber
-				number = true, -- sets vim.opt.number
-				spell = false, -- sets vim.opt.spell
+				number = true,      -- sets vim.opt.number
+				spell = false,      -- sets vim.opt.spell
 				signcolumn = "yes", -- sets vim.opt.signcolumn to yes
-				wrap = true, -- sets vim.opt.wrap
+				wrap = true,        -- sets vim.opt.wrap
 			},
-			g = { -- vim.g.<key>
+			g = {                 -- vim.g.<key>
 				-- configure global vim variables (vim.g)
 				-- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
 				-- This can be found in the `lua/lazy_setup.lua` file
@@ -81,11 +81,25 @@ return {
 					end,
 					desc = "Undo tree",
 				},
-				["<Leader>tn"] = { "<Cmd>Neogit<cr>", desc = "Toggle Neogit" },
-				["<Leader>nd"] = { "<Cmd>Neotree toggle position=current<CR>", desc = "Toggle Neotree files" },
-				["<Leader>nb"] = { "<Cmd>:Neotree buffers position=current<CR>", desc = "Toggle Neotree buffers" },
-				["<Leader>ng"] = { "<Cmd>:Neotree git_status position=current<CR>", desc = "Toggle Neotree git files" },
+				["<Leader>tn"] = {
+					"<Cmd>Neogit<cr>",
+					desc = "Toggle Neogit",
+				},
+				["<Leader>nf"] = {
+					"<Cmd>Neotree toggle position=current<CR>",
+					desc = "Toggle Neotree files",
+				},
+				["<Leader>nb"] = {
+					"<Cmd>Neotree buffers position=current<CR>",
+					desc = "Toggle Neotree buffers",
+				},
+				["<Leader>ng"] = {
+					"<Cmd>Neotree git_status position=current<CR>",
+					desc = "Toggle Neotree git",
+				},
 				["<Leader>n"] = false,
+				["<Leader>e"] = false,
+				["<Leader>h"] = false,
 				-- tables with just a `desc` key will be registered with which-key if it's installed
 				-- this is useful for naming menus
 				-- ["<Leader>b"] = { desc = "Buffers" },
