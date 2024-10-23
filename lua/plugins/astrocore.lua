@@ -81,9 +81,9 @@ return {
 					end,
 					desc = "Undo tree",
 				},
-				["<Leader>tn"] = {
+				["<Leader>e"] = {
 					"<Cmd>Neogit<cr>",
-					desc = "Toggle Neogit",
+					desc = "Neogit",
 				},
 				["<Leader>nf"] = {
 					"<Cmd>Neotree toggle position=current<CR>",
@@ -98,7 +98,6 @@ return {
 					desc = "Toggle Neotree git",
 				},
 				["<Leader>n"] = false,
-				["<Leader>e"] = false,
 				["<Leader>h"] = false,
 				-- tables with just a `desc` key will be registered with which-key if it's installed
 				-- this is useful for naming menus
