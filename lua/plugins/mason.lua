@@ -15,7 +15,8 @@ return {
 				"bashls",
 				"jsonls",
 				-- "yamlls",
-				"helm_ls",
+				-- "helm_ls",
+				"azure_pipelines_ls",
 				-- add more arguments for adding more language servers
 			},
 		},
