@@ -17,6 +17,7 @@ return {
         "gosum",
         "gotmpl",
         "gowork",
+        "haskell",
         "helm",
         "json",
         "jsonc",
