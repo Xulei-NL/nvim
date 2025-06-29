@@ -19,19 +19,19 @@ return {
 			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		},
 	},
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local builtin = require("telescope.builtin")
-			-- vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-			-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-			-- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-			-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-		end,
-		enabled = false,
-	},
+	-- {
+	-- 	"nvim-telescope/telescope.nvim",
+	-- 	tag = "0.1.8",
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	config = function()
+	-- 		local builtin = require("telescope.builtin")
+	-- 		-- vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
+	-- 		-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+	-- 		-- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+	-- 		-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+	-- 	end,
+	-- 	enabled = false,
+	-- },
 	{
 		"ibhagwan/fzf-lua",
 		-- optional for icon support
@@ -41,7 +41,7 @@ return {
 		opts = {},
 		config = function()
 			local fzf_lua = require("fzf-lua")
-			vim.keymap.set("n", "<leader>ft", fzf_lua.files, { desc = "FZF: Find Files" })
+			vim.keymap.set("n", "<leader>ff", fzf_lua.files, { desc = "FZF: Find Files" })
 			vim.keymap.set("n", "<Leader>fg", fzf_lua.live_grep, { desc = "FZF: Live Grep" })
 			vim.keymap.set("n", "<Leader>fb", fzf_lua.buffers, { desc = "FZF: Buffers" })
 			vim.keymap.set("n", "<Leader>fc", fzf_lua.commands, { desc = "FZF: Neovim Commands" })
