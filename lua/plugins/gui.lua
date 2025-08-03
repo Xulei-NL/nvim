@@ -1,5 +1,14 @@
 return {
 	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		},
+	},
+	{
 		"kdheepak/lazygit.nvim",
 		lazy = true,
 		cmd = {
@@ -19,25 +28,12 @@ return {
 			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		},
 	},
-	-- {
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	tag = "0.1.8",
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	config = function()
-	-- 		local builtin = require("telescope.builtin")
-	-- 		-- vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-	-- 		-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-	-- 		-- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-	-- 		-- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
-	-- 	end,
-	-- 	enabled = false,
-	-- },
 	{
 		"ibhagwan/fzf-lua",
 		-- optional for icon support
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		-- or if using mini.icons/mini.nvim
-		-- dependencies = { "echasnovski/mini.icons" },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 		opts = {},
 		config = function()
 			local fzf_lua = require("fzf-lua")
@@ -46,30 +42,6 @@ return {
 			vim.keymap.set("n", "<Leader>fb", fzf_lua.buffers, { desc = "FZF: Buffers" })
 			vim.keymap.set("n", "<Leader>fc", fzf_lua.commands, { desc = "FZF: Neovim Commands" })
 		end,
-	},
-	{
-		"stevearc/oil.nvim",
-		config = true,
-		dependencies = {
-			{ "echasnovski/mini.icons", opts = {} },
-		},
-		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-		-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-		lazy = false,
-	},
-	-- {
-	-- 	"akinsho/bufferline.nvim",
-	-- 	dependencies = {
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 	},
-	-- 	config = true,
-	-- },
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = true,
 	},
 	{
 		"echasnovski/mini.nvim",
@@ -89,6 +61,17 @@ return {
 			vim.o.background = "light"
 			require("solarized").setup(opts)
 			vim.cmd.colorscheme("solarized")
+		end,
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup({})
 		end,
 	},
 }
